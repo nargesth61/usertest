@@ -36,6 +36,12 @@ class RegisterSerializer(serializers.ModelSerializer):
         if self.user:
             return self.user
         try:
+            '''
+            Atomicity is the defining property of database transactions.
+            atomic allows us to create a block of code within which the atomicity on the database is guaranteed. 
+            If the block of code is successfully completed, the changes are committed to the database.
+            If there is an exception, the changes are rolled back.
+            '''
             with transaction.atomic():
                 user = User.objects.create(email=validated_data['email'], otp=generate_otp(), is_active=False)
         except IntegrityError:
@@ -129,7 +135,6 @@ class Logoutserializer(serializers.Serializer) :
         return attrs
 
     def save(self, **kwargs):
-
         try:
             RefreshToken(self.token).blacklist()
         except TokenError:

@@ -9,8 +9,6 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
-
 from datetime import timedelta
 from pathlib import Path
 
@@ -44,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'membership',
     'corsheaders',
+    'social_login',
 ]
 
 SITE_ID = 1
@@ -91,8 +90,12 @@ DATABASES = {
 }
 
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
-                               'membership.backends.EmailBackend']
+                               'membership.backends.EmailBackend'
+                               ]
 
+
+SOCIAL_SECRET = "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"
+GOOGLE_CLIENT_ID = "28661120814-q6jsf9iesg1ld4lf3u8mc1kpvkp2b4rh.apps.googleusercontent.com"
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 

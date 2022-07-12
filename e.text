@@ -1,0 +1,8 @@
+https://accounts.google.com/o/oauth2/v2/auth?
+ scope=https://mail.google.com&
+ access_type=offline&
+ include_granted_scopes=true&
+ response_type=code&
+ state=state_parameter_passthrough_value&
+ redirect_uri=http://localhost&
+ client_id=28661120814-0igitqvqdashicrdpq138vemskir12vg.apps.googleusercontent.com

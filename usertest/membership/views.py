@@ -45,6 +45,7 @@ class VerifyAPI(APIView):
             user = User.objects.filter(email = email)
             if not user.exists():
                   return Response('invalid email', status=status.HTTP_400_BAD_REQUEST)        
+            #user[0] = Because users emails are unique, the first user with this email
             if user[0].otp != otp :
                   return Response('wrong otp', status=status.HTTP_400_BAD_REQUEST)                     
             user = user.first()
