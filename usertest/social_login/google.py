@@ -1,6 +1,5 @@
-from lib.google.auth.transport import requests
 from lib.google.oauth2 import id_token
-
+from lib.google.auth.transport import requests
 
 class Google:
     """Google class to fetch the user info and return it"""
@@ -10,14 +9,12 @@ class Google:
         """
         validate method Queries the Google oAUTH2 api to fetch the user info
         """
-        print(auth_token)
-        try:
-            
-            idinfo = id_token.verify_oauth2_token(
+        
+        idinfo = id_token.verify_oauth2_token(
                 auth_token, requests.Request())
-            print('wew')
-            if 'accounts.google.com' in idinfo['iss']:
+
+        if 'accounts.google.com' in idinfo['iss']:
                 return idinfo
+
             
-        except:
-            return "The token is either invalid or has expired"
+   

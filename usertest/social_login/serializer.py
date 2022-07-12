@@ -18,12 +18,13 @@ class GoogleSerializer(serializers.Serializer):
            user_data['sub']
         except :
             raise serializers.ValidationError('The token is invalid or expired. Please login again.')
-        
-        if user_data['aud'] != settings.GOOGLE_CLIENT_ID:
+        GOOGLE_CLIENT_ID= '407408718192.apps.googleusercontent.com'
+        if user_data['aud'] != GOOGLE_CLIENT_ID:
              raise AuthenticationFailed('oops, who are you?')
         
         user_id = user_data['sub']
         email = user_data['email']
+        print(email)
         provider = 'google'
 
         return Social_register(

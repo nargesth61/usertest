@@ -94,9 +94,6 @@ AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
                                ]
 
 
-SOCIAL_SECRET = "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"
-GOOGLE_CLIENT_ID = "28661120814-q6jsf9iesg1ld4lf3u8mc1kpvkp2b4rh.apps.googleusercontent.com"
-# Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
