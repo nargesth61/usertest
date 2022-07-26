@@ -89,7 +89,10 @@ DATABASES = {
     }
 }
 
-AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
+SOCIAL_SECRET='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'
+
+AUTHENTICATION_BACKENDS = [ 'social_login.register.EmailAuthBackend',
+                               'django.contrib.auth.backends.ModelBackend',
                                'membership.backends.EmailBackend'
                                ]
 

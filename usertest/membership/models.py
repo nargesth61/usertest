@@ -20,7 +20,6 @@ class User(AbstractUser):
     generated_date = models.DateTimeField(default=timezone.now, editable=False)
     auth_provider=models.CharField(max_length=225,blank=False,null=False,default=AUTH_PROVIDERS.get('email'))
 
-
     REQUIRED_FIELDS = ['email',]
      
     objects: UserManeger()

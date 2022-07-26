@@ -5,4 +5,5 @@ from .views import Googlelogin
 
 urlpatterns = [
     path('google/', Googlelogin.as_view()),
+  
 ]
